@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt,twoside,openright,titlepage]{book}
+
+%Additional packages
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dutch,english]{babel}
+% Turn on indexing
+\usepackage{imakeidx}
+\usepackage{syntonly}
+\usepackage[official]{eurosym}
+%\usepackage[graphicx]
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+\usepackage{tabularx}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{color}
+
+\makeindex[columns=3,title=Alfabetische index,intoc]
+
+% Define colors
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
+
+% Listing style
+\lstset{
+  backgroundcolor=\color{ashgrey},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text
+  showstringspaces=false,
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+}
+
+% Uncomment for production
+% \syntaxonly
+
+% Style
+\pagestyle{headings}
+
+% Define document
+\author{D. Leeuw}
+\title{Linux introductie voor systeembeheerders - voor MBO niveau 4 en het LPI Linux Essentials examen: De CLI}
+%\subtitle{Linux voor MBO niveau 4 en het LPI Linux Essentials examen}
+%\subject{Een Praktische Gids}
+\date{\today\\v.0.2.0}
+
+\begin{document}
+
+\selectlanguage{dutch}
+
+\maketitle
+
+\copyright\ 2020 Dennis Leeuw\\
+
+\begin{figure}
+	\includegraphics[width=0.3\textwidth]{CC-BY-SA-NC.png}
+\end{figure}
+
+\bigskip
+
+\input{licentie}
+
+%%%%%%%%%%%%%%%%%%%
+%%% Introductie %%%
+%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+\chapter{Over dit Document}
+\input{OverDitDocument}
+
+%%%%%%%%%%%%%%%%%
+%%% De inhoud %%%
+%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+\mainmatter
+\chapter{Inleiding}
+\input{inleiding}
+
+\chapter{Shell scripting}\index{Shell scripting}
+\input{ScriptingIntro}
+\section{Waarom scripting?}
+\input{ScriptingGebruik}
+\section{Hello World - een eerste script}
+\input{ScriptingHelloWorld}
+\section{Het starten van scripts}
+\input{ScriptingOpstarten}
+\section{Commentaar}\index{Shell scripting!commentaar}
+\input{ScriptingCommentaar}
+\section{Variabelen}\index{Shell scripting!variabelen}
+\input{VariabelenEigen}
+\input{VariabelenShell}
+\input{ScriptingVariabelen}
+\subsection{Opdracht: Werken met variabelen}
+\input{ScriptingVariabelenOpdracht}
+\section{if}\index{if}\index{Shell scripting!if}
+\input{ScriptingIf}
+\subsection{Opdracht: Werken met if}
+\input{ScriptingIfOpdracht}
+\section{for}\index{for}\index{Shell scripting!for}
+\section{while}\index{while}\index{Shell scripting!while}
+\input{ScriptingWhile}
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Index and End %%%
+%%%%%%%%%%%%%%%%%%%%%
+%\backmatter
+\printindex
+\end{document}
+
+%%% Last line %%%

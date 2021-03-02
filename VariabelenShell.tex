@@ -1,0 +1,16 @@
+Tot nog toe heb je kennis gemaakt met twee variabelen van de shell. PATH en ?. Er zijn er nog veel meer die standaard beschikbaar zijn. Om er een paar te noemen:
+\begin{lstlisting}[language=bash]
+$ echo $USER
+$ echo $SHELL
+$ echo $HOME
+$ echo $PWD
+\end{lstlisting}
+om een complete lijst te krijgen van alle variabelen die in je huidige sessie tot je beschikking staan is er het commando \texttt{env}\index{env}\index{commando!env}.
+Als je de waarde van een variabele wil wijzigen gebruik je \texttt{export}\index{export}\index{commando!export}:
+\begin{lstlisting}[language=bash]
+$ echo $PATH
+$ PATH=".:${PATH}"
+$ export PATH
+$ echo $PATH
+\end{lstlisting}
+met deze opdracht hebben we de . directory toegevoegd aan de PATH variabele. Als we een commando aanroepen en het komt voor in de directory waar we op dat moment in staan dan zal het dat commando uitvoeren. We hoeven dan niet meer het hele pad of de ./ op te geven.

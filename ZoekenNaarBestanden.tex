@@ -1,0 +1,90 @@
+Met zo'n grote boom van directories is het van belang dat je op een simpele manier bestanden terug kan vinden. Om te
+zoeken naar bestanden of directories is er het commando `find'. De syntax van `find' ziet er zo uit:
+
+\begin{lstlisting}[language=bash]
+$ find \ [-H] \ [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
+\end{lstlisting}
+
+Dit is geknipt en geplakt uit de man-page waar je uitgebreide documentatie kan vinden over find. Om een idee te krijgen
+hoe find werkt type:
+
+\begin{lstlisting}[language=bash]
+$ find \~{} -name ``Muziek'' -print
+\end{lstlisting}
+
+Bij mij op het systeem was het antwoord
+\begin{lstlisting}[language=bash]
+/home/dennis/LinuxCursus/Muziek
+\end{lstlisting}
+
+Bij jou is dennis natuurlijk weer vervangen door je eigen gebruikersnaam. Print is de standaard functie van find, en
+daarom vonden de programmeurs van find dat als je geen opdracht meegeeft dat find dan ook print doet. Dus korter kan
+het zo
+\begin{lstlisting}[language=bash]
+$ find \~{} -name ``Muziek''
+\end{lstlisting}
+
+Die \~{} is makkelijk als je in je home-directory wil zoeken, maar wat als je in bijvoorbeeld /etc/ staat en in die
+directory wil zoeken? Daar is ook over nagedacht. We hebben al `..' gezien als een aanduiding voor een lager gelegen
+directory, maar zo is er ook de `.' als we `deze'-directory bedoel. En met deze bedoelen we de directory waarin we nu
+staan. Dus we kunnen ook het volgende doen:
+
+\begin{lstlisting}[language=bash]
+$ find . -name ``Muziek''
+\end{lstlisting}
+
+En voor wie niets tegen typen heeft mag je natuurlijk ook de hele directory opgeven
+\begin{lstlisting}[language=bash]
+$ find /home/dennis/ -name ``Muziek''
+\end{lstlisting}
+
+Met -name geven we op dat we naar een bestandsnaam zoeken en een bestandsnaam kan ook een directory zijn. Als we
+onderscheidt willen maken tussen bestanden en directories kan kunnen we een -type meegeven:
+\begin{lstlisting}[language=bash]
+$ find . -type d -name ``Muziek''
+\end{lstlisting}
+
+Zal dezelfde output geven want type d is een directory, maar als doen
+\begin{lstlisting}[language=bash]
+$ find . -type f -name ``Muziek''
+\end{lstlisting}
+
+dan vinden we niets, want het type f is een regulier bestand en Muziek is een directory.
+
+Om dat te testen doen we het volgende
+\begin{lstlisting}[language=bash]
+$ touch \~{}/LinuxCursus/Documenten/leeg\_bestand.txt
+$ find . -type f -name ``leeg\_bestand.txt''
+\end{lstlisting}
+
+Met touch kan je een nieuw leeg bestand aanmaken en dat hebben we gedaan en daarna hebben we find naar dat nieuwe
+bestand laten zoeken. Nou lijkt dit een wat onzinnige actie omdat we al weten waar het bestand is, maar het geeft ons
+een optie om een andere functie van find te demonstreren, namelijk het zoeken naar lege bestanden op het systeem:
+\begin{lstlisting}[language=bash]
+$ find . -size 0
+\end{lstlisting}
+de -size optie geldt alleen voor bestanden, de -empty optie laat naast lege bestanden ook lege directories zien
+\begin{lstlisting}[language=bash]
+$ find . -empty
+\end{lstlisting}
+
+Het find commando kent nog veel meer opties zoals zoeken naar de datum en tijd waarop een bestand is aangemaakt of een
+moment later of eerder dan een bepaalde datum en tijd. De man-page van find documenteert al deze verschillende opties
+en op Internet is heel veel uitleg te vinden hoe je find met al deze opties kan gebruiken. Een laatste functie van find
+willen je nog meegeven. De kan behalve met -print find ook andere dingen laten doen dan de gevonden elementen printen,
+je kan find ook vertellen om een actie uit te voeren, zoals het deleten van de gevonden elementen:
+
+\begin{lstlisting}[language=bash]
+$ find . -size 0 -delete
+\end{lstlisting}
+een ls van LinuxCursus/Documenten/ zal laten zien dat het bestand leeg\_bestand.txt niet meer bestaat. Pas wel op, dit
+kan gevaarlijke situaties opleveren.
+
+\begin{lstlisting}[language=bash]
+$ find LinuxCursus/ -empty -delete
+\end{lstlisting}
+
+Dit commando zoekt in de LinuxCursus naar alle directories en bestanden die leeg zijn. Bestanden
+hadden we niet meer, maar er stonden nog wel twee directories in (Documenten en Muziek), beide directories waren leeg
+en werden door find dan ook keurig verwijderd van het systeem. Toen kwam find nog de directory LinuxCursus tegen, en ja
+die was inmiddels ook leeg, dus heeft find die ook weggegooid!

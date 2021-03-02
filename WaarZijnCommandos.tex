@@ -1,0 +1,91 @@
+Toen we eerder de p typten en daarna twee keer op de tab-toets toen zagen we dat we 177 commando's hadden die met een p
+begonnen. 177 commando's alleen al met een p dat is veel. Een gemiddeld Linux systeem bevat heel veel commando's en dat
+is omdat er in de Unix-wereld twee filosofie\"en zijn die bij elkaar aansluiten de eerste is het \ KISS-principle. KISS
+staat voor Keep It Simple, Stupid en is oorspronkelijk afkomstig uit de US Navy. En de tweede is Small is Beautiful en
+die is afkomstig uit de Economie\footnote{Small Is Beautiful: A Study of Economics As If People Mattered door E. F.
+Schumacher}
+
+Op Linux systemen kom je vele kleine commando's tegen die \'e\'en ding goed doen. Dit heeft een aantal voordelen. Omdat
+ze maar \ \'e\'en ding doen is de code simpel en is dus makkelijker te controleren op fouten. Omdat niet iedereen in
+elk programma weer dezelfde code hoeft te herhalen maar gebruik kan maken van iemand anders zijn programma is de totale
+hoeveelheid code klein, een compleet Linux systeem met webserver kan zonder grafische interface ge\"installeerd worden
+op een 8G USB-stick. De laatste reden is dat wij als gebruikers vaak zonder te programmeren al heel complexe dingen met
+Linux kunnen doen omdat er al zoveel tools al beschikbaar zijn.
+
+Het nadeel van heel veel kleine programma's is dat je het overzicht snel kwijt kan raken. Een van de simpele programma's
+is `ls', dat is een afkorting voor list. Veel commando's in Linux zijn afkortingen. De oorspronkelijke ontwikkeling van
+Unix werd gedaan op systemen met toetsenborden die niet zo ergonomisch zijn als de onze. Ze hadden toetsen die je met
+enige kracht moest indrukken en na een dag programmeren hadden de programmeurs Ken Thompson en Dennis Ritchie en hun
+team vaak zere knokkels door overbelasting. Door commando's zo kort mogelijke namen te geven verminderden ze het aantal
+toetsaanslagen. Vandaar de korte commando namen.
+
+Type
+\begin{lstlisting}[language=bash]
+$ ls
+\end{lstlisting}
+en je zal een aantal blauwe directories op je scherm zien verschijnen. Als je nu
+\begin{lstlisting}[language=bash]
+$ ls /usr/bin/
+\end{lstlisting}
+typt dan verschijnen er allemaal groene commando's op je scherm, of beter ze scrollen van je scherm in twee kolommen,
+omdat het er te veel zijn. Het past niet op je scherm. Als we de hele lijst willen zien dan zullen we gebruik moeten
+maken van een programma de uitvoer van `ls' opdeelt in pagina's die zoveel regels bevatten dat ze het scherm vullen.
+Een programma dat dat doet heet `more'. De kunst is nu om de uitvoer van `ls' te koppelen aan `more' en daarvoor is er
+de pipe (|) of de pijp. Het pipe-character koppelt twee commando's aan elkaar:
+\begin{lstlisting}[language=bash]
+$ ls /usr/bin/ | more
+\end{lstlisting}
+met de spatie-balk kan je nu pagina voor pagina bekijken en met de letter q verlaat je `more'. Nu is more wel heel
+simpel en kan het alleen dat wat je nu gezien hebt. Makkelijker zou het zijn als je omhoog en omlaag door de commando's
+kan gaan, en misschien zelfs wel zou kunnen zoeken in zo'n lange lijst. Dat kan ook, daarvoor hebben we de opvolger van
+`more' die meer kan en `less' heet want less is more.
+
+\begin{lstlisting}[language=bash]
+$ ls /usr/bin/ | less
+\end{lstlisting}
+Nu kan je met de spatie-balk door de pagina's gaan, met de pijltjes omhoog en omlaag per regel door de lijst gaan, met
+PgUp en PgDn per pagina omhoog en omlaag gaan en met / kan je zoeken. Type maar eens als je in `less' zit
+\begin{lstlisting}[language=bash]
+/firefox
+\end{lstlisting}
+Zo kom je bij het commando `firefox' uit. Ook hier weer is de q-toets de manier om `less' te verlaten.
+
+We hebben nu gezien dat heel veel commando's terug te vinden zijn in de /usr/bin/ directory. Maar dit is maar \'e\'en
+plek waar commando's te vinden zijn. Commando's vind je terug in de (s)bin/ directories. We
+gebruiken hier een meervoud omdat ze zich op verschillende plekken kunnen vinden. Je bent in de / directory al de bin
+en sbin directories tegen gekomen. sbin is voor de systeembeheerder commando's en bin voor
+commando's die ook door de normale gebruiker gebruikt kunnen worden.
+
+Maar een Linux systeem zit iets complexer in elkaar. Je hebt waarschijnlijk ook al de /usr/
+directory gezien. In die directory kom je een vergelijkbare structuur tegen als in /. Vaak wordt er gezegd dat
+commando's in /bin/ en /sbin/ nodig zijn om het systeem op te starten. Alles ze niet direct nodig zijn voor het
+opstarten dan vind je ze in /usr/bin/ en /usr/sbin/. Dat geldt ook voor de libraries in /lib/ en /usr/lib/.
+
+Linux is een open source systeem, dus een systeembeheer kan ook bepalen dat bepaalde software
+door hemzelf gecompileerd wordt omdat hij bijvoorbeeld een nieuwere versie beschikbaar wil maken dan door de
+distributie geleverd wordt. Deze lokaal gecompileerde software wordt dan ge\"installeerd in /usr/local/. Dus
+/usr/local/bin bevat commando's die afkomstig zijn van lokaal gecompileerde software en /usr/local/lib/ de libraries.
+
+En als laatste is er nog de /opt/ directory. /opt/ is voor voorgecompileerde software die niet onderdeel is van de
+distributie maar die bijvoorbeeld gecompileerd is door een commerci\"ele leverancier van software.
+
+Om te bepalen welke directories gebruikt worden voor het zoeken naar een commando is er een variabele aanwezig in de
+shell waarin we werken en die variabele heeft de logische naam PATH. Type maar eens:
+\begin{lstlisting}[language=bash]
+$ echo $PATH
+\end{lstlisting}
+Dit levert een output op die er ongeveer zo uit ziet: /usr/local/bin:/usr/bin:/bin. Voor een gebruiker met dit PATH
+wordt er voor een commando eerst gezocht in /usr/local/bin, daarna in /usr/bin en als laatste in /bin/.
+
+Met het commando su kan je een andere gebruiker worden (switch user). Type eens:
+\begin{lstlisting}[language=bash]
+$ su -
+\end{lstlisting}
+geef het root wachtwoord en type
+\begin{lstlisting}[language=bash]
+# echo $PATH
+# exit
+\end{lstlisting}
+Na het su commando moet je het password van de root gebruiker geven dat je ingesteld hebt tijdens
+de installatie. Je zal nu zien dat het PATH van de root gebruiker ook de sbin/ directories bevat. De root gebruiker
+heeft dus veel meer commando's tot zijn beschikking dan een normale gebruiker.

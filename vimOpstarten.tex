@@ -1,0 +1,11 @@
+De meeste gebruikelijke manier om vim op te starten is door aan vim meteen een bestandsnaam mee te geven:
+\begin{lstlisting}[language=bash]
+$ vim bestand.txt
+\end{lstlisting}
+Als je klaar bent met het toevoegen van tekst kan je met \textbf{:wq} afsluiten. Dit slaat het document op (w) en sluit af(q). Wil je de editor verlaten zonder de gemaakte wijzigingen op te slaan, dan gebruikt je \textbf{:q!} om dat te doen. Het doet een quit (q) zonder verdere vragen stellen.
+
+Een andere manier om vim op te starten is door geen bestandsnaam mee te geven:
+\begin{lstlisting}[language=bash]
+$ vim
+\end{lstlisting}
+de editor weet nu niet onder welke bestandsnaam een bestand opgeslagen moet worden. Bij de write (w) moet je nu dus de bestandsnaam meegeven: \textbf{:w bestand.txt} slaat het bestand dat je gemaakt hebt op als bestand.txt. Na deze opdracht kan je met \textbf{:q} vim afsluiten.

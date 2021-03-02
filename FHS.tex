@@ -1,0 +1,33 @@
+We staan nog steeds in de / directory als we daar ls typen dan zien we allemaal verschillende directories op ons scherm
+verschijnen.
+
+Net als met de standaardisatie van Unix in een POSIX standaard werden er in het begin op Linux Distributies soms
+bestanden in verschillende directories neergezet. Dat is voor programma's die op die systemen moeten draaien niet
+handig. Als de ene distributie /var/db heeft voor het plaatsen van databases en de ander /var/databases dan schept dat
+verwarring. De oplossing die hiervoor gekomen is is de Filesystem Hierarchy Standard. Deze is beschikbaar op
+\url{https://refspecs.linuxfoundation.org/fhs.shtml}. Hier gaan we heel globaal in op een aantal belangrijke
+directories, mocht je alle ins en outs willen weten dan raden we je aan om het document een keer te lezen.
+
+De basis van het bestandssysteem wordt bepaald door de / directory, ook de root genoemd omdat de vertakkende directories
+op een boom structuur lijkt en het Engelse root betekend stam.
+
+Een ls van / laat ons een aantal verschillende directories zien. Laten we beginnen met /boot/. Deze directory bevat
+bestanden die cruciaal zijn voor het opstarten maar die geen commando zijn. Hier vinden we de kernel en bestanden die
+behoren bij de bootloader.
+
+De /dev/ directory bevat de namen van beschikbare devices. Devices worden worden besproken in het hoofdstuk over
+devices. Dus daar gaan we later nog op in.
+
+De /etc/ directory bevat de configuratiebestanden van het systeem. Als je een instelling wil wijzigen is dit de plek om
+te gaan zoeken.
+
+/home/ bevat de directories waarin gebruikers hun bestanden kunnen zetten. Een uitzondering hierop is de directory
+waarin de root gebruiker (de baas of administrator van het systeem), zijn bestanden kan opslaan. Die directory is
+/root/.
+
+/var/ is de directory voor de systeem opslag van variabele data zoals bijvoorbeeld de logbestanden die je dan ook kan
+vinden in /var/log/.
+
+/srv/ bevat de data van de diensten die door het systeem wordt aangeboden. Data van web- of
+ftp-servers kan hier gevonden worden.
+
