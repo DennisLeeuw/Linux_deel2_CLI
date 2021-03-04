@@ -36,7 +36,7 @@ In de manual pagina vind je nog veel meer mogelijkheden waarop je kan testen met
 
 Het eerste script dat we gaan maken is een script dat een \texttt{ping}\index{Shell scripting!ping} doet naar een IP-adres en dat test of de ping goed verlopen is:
 \begin{lstlisting}[language=bash]
-#/bin/bash
+#!/bin/bash
 # (c) 2021, Dennis Leeuw
 # ping een host en kijk of dat succesvol is verlopen
 
@@ -61,7 +61,7 @@ Het is echter een goede gewoonte om in scripts de blokhaken, [ en ], te gebruike
 
 Stel dat we ook aan de gebruiker willen laten weten als het wel goed gegaan is. Dus in alle andere gevallen, dat kunnen we doen met \texttt{else}\index{else}\index{Shell scripting!else}:
 \begin{lstlisting}[language=bash]
-#/bin/bash
+#!/bin/bash
 # (c) 2021, Dennis Leeuw
 # ping een host en kijk of dat succesvol is verlopen
 
