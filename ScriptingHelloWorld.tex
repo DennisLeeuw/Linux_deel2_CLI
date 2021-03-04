@@ -28,4 +28,14 @@ Als je de editor verlaten hebt en weer een \texttt{file} doet van hello\_world.s
 
 Voor een script dat ge\"interpreteerd moet worden door een interpreter, dat kan een shell zijn, zijn de 2-character codes de she-bang\index{she-bang}: \#! of hexadecimaal 0x23 0x21. Achter de she-bang komt de interpreter die het script moet interpreteren. Als de shell deze character reeks tegen komt zal het de rest van de regel lezen om te bepalen aan welke interpreter (shell) het het script moet voeren. In ons voorbeeld wordt het script gegeven aan het programma /bin/bash en deze zal de twee opgegeven commando's uitvoeren.
 
-Eerst wordt door echo \texttt{Hello world!} op het scherm gezet en daarna sluit het script af. Het \texttt{exit}\index{exit}\index{commando!exit} commando is niet noodzakelijk, als de shell geen commando's meer tegen komt zal het automatisch afsluiten. Het voordeel van \texttt{exit} is dat je er een exit code aan mee kan geven zodat je kan laten weten dat het commando goed (0) of fout (1) ge\"eindigd is. Doe je dit niet dan is de exit code de error-code van het laatst uitgevoerde commando.
+Eerst wordt door echo \texttt{Hello world!} op het scherm gezet en daarna sluit het script af. Het \texttt{exit}\index{exit}\index{commando!exit}\index{Shell scripting!exit} commando is niet noodzakelijk, als de shell geen commando's meer tegen komt zal het automatisch afsluiten. Het voordeel van \texttt{exit} is dat je er een exit code aan kan meegeven zodat je kan laten weten dat het script goed (0) of fout (1) ge\"eindigd is. Doe je dit niet dan is de exit code de error-code van het laatst uitgevoerde commando.
+
+Voer het script uit en geef direct daarna het commando
+\begin{lstlisting}[language=bash]
+$ echo $?
+\end{lstlisting}
+als je nu de regel met daarop \texttt{exit 0} vervangt door \texttt{exit 1} en dan weer het script draait en het commando
+\begin{lstlisting}[language=bash]
+$ echo $?
+\end{lstlisting}
+geeft dan zie welke invloed het exit commando heeft.
