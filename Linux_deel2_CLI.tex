@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,twoside,openright,titlepage]{book}
 
 %Additional packages
-\usepackage[ascii]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[dutch,english]{babel}
 \usepackage{imakeidx}
@@ -132,6 +132,18 @@
 \section{Internet}
 \input{DocInternet}
 
+% Requires: fhs
+% Provides: grep, find, globbing, regular expressions
+\chapter{Zoeken en vinden}\label{zoekenenvinden}
+\input{ZoekenVindenIntro}
+\section{Globbing}
+\input{Globbing}
+\section{Zoeken naar bestand}
+\input{find}
+\input{ZoekenNaarBestanden}
+\section{Zoeken in bestanden}
+\section{Regular Expressions}
+
 % Requires: fhs, ls, grep
 % Provides: users, groups, chown, adduser, deluser, usermod
 %           /etc/passwd, /etc/shadow, /etc/group, /etc/gshadow
@@ -176,28 +188,68 @@
 \input{vimKnippenPlakken}
 \input{vimBewegen}
 
-% Requires: fhs
-% Provides: grep, find, globbing, regular expressions
-\chapter{Zoeken en vinden}\label{zoekenenvinden}
-\input{ZoekenVindenIntro}
-\section{Globbing}
-\input{Globbing}
-\section{Zoeken naar bestand}
-\input{find}
-\input{ZoekenNaarBestanden}
-\section{Zoeken in bestanden}
-\section{Regular Expressions}
+% Requires: sudo, cat
+% Provides: lscpu, free, dmidecode, uname
+% lspci, lsusb, lsscsi, lsblk, du, df, fdisk
+\chapter{Systeem inventarisatie}
+\input{inventarisatie}
+\section{System versienummers}
+\input{versienummers}
+\subsection{Distributie versie}
+\input{distro_version}
+\subsection{Kernel versie}
+\input{kernel_version}
+\section{Het moederbord}
+\subsection{CPU}\index{CPU}\index{Hardware informatie!CPU}
+\input{cpu_info}
+\subsection{RAM}\index{RAM}\index{Hardware informatie!RAM}
+\input{ram_info}
+\subsection{BIOS}\index{BIOS}\index{Hardware informatie!BIOS}
+\input{bios_info}
+\section{Extensie bussen}
+\subsection{PCI}\index{PCI}\index{Hardware informatie!PCI}
+\input{pci_info}
+\subsection{USB}\index{USB}\index{Hardware informatie!USB}
+\input{usb_info}
+\subsection{SCSI}\index{SCSI}\index{Hardware informatie!SCSI}
+\input{scsi_info}
+\section{Harddisks}
+\input{disks}
+\input{disks-fs}
+\input{disks-partition}
+\input{disk-free}
+\input{disk-usage}
+\section{Netwerk}
+\input{netwerk_hardware}
+\section{Inventarisatie opdracht}
+\input{inventarisatie_opdracht}
 
-\chapter{Mounten van bestandssystemen}
+% Provides: journalctl, ps
+\chapter{Systeembeheer}
+\section{Processen}
+% ps
+\section{Logging}
+% Journal, var, dmesg
+
+% Requires: lsblk
+% Provides: mount, umount
+\chapter{Mounten van lokale bestandssystemen}
 \input{Mounten}
 \subsection{Mounten van disks}
 \input{MountenDisks}
 
-\chapter{Systeem inventarisatie}
-
 \chapter{Netwerk configuratie}
 
 \chapter{Software installeren}
+
+\chapter{Programmeertalen}
+\input{Programmeertalen}
+\section{C}
+\section{C++}
+\section{Perl}
+\section{PHP}
+\section{Python}
+\section{Bash}
 
 \chapter{Shell scripting}\index{Shell scripting}
 \input{ScriptingIntro}
@@ -213,17 +265,16 @@
 \input{ScriptingVariabelen}
 \section{if}\index{if}\index{Shell scripting!if}
 \input{ScriptingIf}
+\subsection{Opdracht: Werken met if}
+\input{ScriptingIfOpdracht}
 \section{for}\index{for}\index{Shell scripting!for}
+\input{ScriptingFor}
+\subsection{Opdracht: Werken met for}
+\input{ScriptingForOpdracht}
 \section{while}\index{while}\index{Shell scripting!while}
 \input{ScriptingWhile}
-
-\chapter{Programmeertalen}
-\input{Programmeertalen}
-\section{C}
-\section{C++}
-\section{Perl}
-\section{PHP}
-\section{Python}
+\subsection{Opdracht: Werken met While}
+\input{ScriptingWhileOpdracht}
 
 %%%%%%%%%%%%%%%%%%%%%
 %%% Index and End %%%

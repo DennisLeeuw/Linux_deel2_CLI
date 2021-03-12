@@ -1,0 +1,15 @@
+De netwerk-hardware zijn we bij \texttt{lspci}\index{lspci} al tegen gekomen. De uitvoer van dat commando gaf 2 netwerkkaarten.
+\begin{lstlisting}[language=bash]
+$ lspci | grep -i net
+00:19.0 Ethernet controller: Intel Corporation Ethernet Connection I217-LM (rev 04)
+03:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8192EE PCIe Wireless Network Adapter
+\end{lstlisting}
+Er is dus een netwerkkaart en een draadloze netwerkadapter in ons systeem aanwezig.
+
+Het \texttt{ip}\index{ip} commando gebruiken we om netwerk interfaces te configureren, maar we kunnen het ook gebruiken om informatie over een adapter op te vragen:
+\begin{lstlisting}[language=bash]
+$ ip link show
+\end{lstlisting}
+Dit geeft de interface met hun netwerk-address (MAC).
+
+
