@@ -224,11 +224,22 @@
 \section{Inventarisatie opdracht}
 \input{inventarisatie_opdracht}
 
-% Provides: journalctl, ps
+% Provides: journalctl, ps, dmesg, top, free, last
+% uptime, syslog
 \chapter{Systeembeheer}
+\input{systeembeheer}
+\section{CPU gebruik}
+\input{uptime}
+\section{Geheugen gebruik}
+\input{geheugengebruik}
+\section{Gebruik door gebruikers}
+\input{usermonitoring}
 \section{Processen}
 % ps
+% top
 \section{Logging}
+% syslog
+% ring buffer dmesg
 % Journal, var, dmesg
 
 % Requires: lsblk
