@@ -1,7 +1,16 @@
 Bij het inloggen heb je een gebruikersnaam en wachtwoord opgegeven en bij de installatie heb je ook een wachtwoord moeten opgeven voor de gebruiker root. Op het systeem zijn dus minimaal al twee gebruikers aanwezig. Op een Linux systeem kunnen ook processen een gebruiker hebben. Dus een proces kan onder een bepaalde gebruiker werken zodat andere gebruikers niet bij dit proces kunnen. Processen zijn taken die op de achtergrond draaien zoals bijvoorbeeld een webserver.
 
-De database met gebruikersnamen is een bestand dat staat in de /etc directory. Het bestand heet passwd en dat kan je bekijken met less.
+De database met gebruikersnamen is een bestand dat staat in de \texttt{/etc} directory. Het bestand heet \texttt{passwd}\index{passwd} en dat kan je bekijken met less.
 
 \begin{lstlisting}[language=bash]
-less /etc/passwd
+$ less /etc/passwd
 \end{lstlisting}
+
+De wachtwoorden staan in een ander bestand, dat heet \texttt{shadow}\index{shadow}. Ook dit bestand kan je me \texttt{less} niet bekijken, omdat alleen de beheerder (root) hier rechten voor heeft. De wachtwoorden zijn niet leesbaar, maar geencrypt, opgeslagen. Met het \texttt{passwd}-commando\index{passwd}\index{Commando!passwd} kan je je wachtwoord wijzigen.
+
+Gebruik \texttt{grep}\index{grep} om je eigen gegevens uit \texttt{/etc/passwd}\index{/etc/passwd} te halen:
+\begin{lstlisting}[language=bash]
+$ grep dennis /etc/passwd
+\end{lstlisting}
+vervang hierbij \textsl{dennis} door je eigen gebruikersnaam.
+
