@@ -73,8 +73,8 @@
 
 \frontmatter
 \chapter{Over dit Document}
-\input{OverDitDocument}
-\input{DocChanges}
+\input{src/OverDitDocument}
+\input{src/DocChanges}
 
 %%%%%%%%%%%%%%%%%
 %%% De inhoud %%%
@@ -83,64 +83,64 @@
 
 \mainmatter
 \chapter{Inleiding}
-\input{inleiding}
+\input{src/inleiding}
 
 % Requires: GUI, DASH
 % Provides: ls, pwd, whoami, hostname, history, mkdir, cd, rmdir, ~
 % PATH, HOME, USER
 \chapter{Waarom de commandline interface?}
-\input{WaaromDeCLI}
+\input{src/WaaromDeCLI}
 \section{Toegang tot de CLI}
-\input{CLIToegang}
+\input{src/CLIToegang}
 \section{De prompt}
-\input{CLIPrompt}
+\input{src/CLIPrompt}
 \section{De shell}
-\input{CLIShell}
+\input{src/CLIShell}
 \subsection{History}
-\input{CLIHistory}
+\input{src/CLIHistory}
 \section{De home-directory}
-\input{HomeDirectory}
+\input{src/HomeDirectory}
 \section{Shell variabelen}
-\input{VariabelenShell}
+\input{src/VariabelenShell}
 \subsection{Eigen variabelen}
-\input{VariabelenEigen}
+\input{src/VariabelenEigen}
 
 % Requires: ls
 % Provides: fhs, which
 \chapter{Het bestandssysteem}
 \section{Commando's}
-\input{Commandos}
+\input{src/Commandos}
 \section{Waar zijn de commando's?}
-\input{WaarZijnCommandos}
+\input{src/WaarZijnCommandos}
 \section{Error codes}
-\input{ErrorCodes}
+\input{src/ErrorCodes}
 \section{FHS - Filesystem Hierarchy Standard}
-\input{FHS}
+\input{src/FHS}
 
 % Requires: fhs
 % Provides: man, locate, info, apropos
 \chapter{Linux documentatie}
-\input{DocIntro}
+\input{src/DocIntro}
 \section{man-pages}
-\input{DocMan}
+\input{src/DocMan}
 \section{Waar vind ik iets?}
-\input{DocVinden}
+\input{src/DocVinden}
 \section{Info}
-\input{DocInfo}
+\input{src/DocInfo}
 \section{/usr/share/doc}
-\input{DocShareDoc}
+\input{src/DocShareDoc}
 \section{Internet}
-\input{DocInternet}
+\input{src/DocInternet}
 
 % Requires: fhs
 % Provides: grep, find, globbing, regular expressions
 \chapter{Zoeken en vinden}\label{zoekenenvinden}
-\input{ZoekenVindenIntro}
+\input{src/ZoekenVindenIntro}
 \section{Globbing}
-\input{Globbing}
+\input{src/Globbing}
 \section{Zoeken naar bestand}
-\input{find}
-\input{ZoekenNaarBestanden}
+\input{src/find}
+\input{src/ZoekenNaarBestanden}
 \section{Zoeken in bestanden}
 \section{Regular Expressions}
 
@@ -149,16 +149,16 @@
 %           /etc/passwd, /etc/shadow, /etc/group, /etc/gshadow
 % Provides: chmod, access rights
 \chapter{Gebruikers, groepen en rechten}
-\input{gebruikersgroepenrechten}
+\input{src/gebruikersgroepenrechten}
 \section{Gebruikers en groepen}
-\input{gebruikers}
-\input{groepen}
+\input{src/gebruikers}
+\input{src/groepen}
 \section{Werken als root}
-\input{WerkenAlsroot}
+\input{src/WerkenAlsroot}
 \subsection{sudo}
-\input{sudo}
+\input{src/sudo}
 \subsection{su}
-\input{su}
+\input{src/su}
 \section{Toegangsrechten op bestanden en directories}
 \subsection{Bestandstypen}
 \subsection{read, write and execute}
@@ -172,68 +172,68 @@
 \subsection{Bestandstypen}
 \section{Directories}
 \section{Bestanden maken en stdin, stdout en stderr}
-\input{BestandenMaken}
+\input{src/BestandenMaken}
 
 % New chapter?
 \section{Het gebruik van een editor}
-\input{editor}
+\input{src/editor}
 \subsection{vi, pico, nano}
-\input{editors}
+\input{src/editors}
 \subsection{vim}
-\input{vimIntro}
+\input{src/vimIntro}
 \subsubsection{vim opstarten}
-\input{vimOpstarten}
-\input{vimTextInvoer}
-\input{vimDelete}
-\input{vimKnippenPlakken}
-\input{vimBewegen}
+\input{src/vimOpstarten}
+\input{src/vimTextInvoer}
+\input{src/vimDelete}
+\input{src/vimKnippenPlakken}
+\input{src/vimBewegen}
 
 % Requires: sudo, cat
 % Provides: lscpu, free, dmidecode, uname
 % lspci, lsusb, lsscsi, lsblk, du, df, fdisk
 \chapter{Systeem inventarisatie}
-\input{inventarisatie}
+\input{src/inventarisatie}
 \section{System versienummers}
-\input{versienummers}
+\input{src/versienummers}
 \subsection{Distributie versie}
-\input{distro_version}
+\input{src/distro_version}
 \subsection{Kernel versie}
-\input{kernel_version}
+\input{src/kernel_version}
 \section{Het moederbord}
 \subsection{CPU}\index{CPU}\index{Hardware informatie!CPU}
-\input{cpu_info}
+\input{scr/cpu_info}
 \subsection{RAM}\index{RAM}\index{Hardware informatie!RAM}
-\input{ram_info}
+\input{src/ram_info}
 \subsection{BIOS}\index{BIOS}\index{Hardware informatie!BIOS}
-\input{bios_info}
+\input{src/bios_info}
 \section{Extensie bussen}
 \subsection{PCI}\index{PCI}\index{Hardware informatie!PCI}
-\input{pci_info}
+\input{src/pci_info}
 \subsection{USB}\index{USB}\index{Hardware informatie!USB}
-\input{usb_info}
+\input{src/usb_info}
 \subsection{SCSI}\index{SCSI}\index{Hardware informatie!SCSI}
-\input{scsi_info}
+\input{src/scsi_info}
 \section{Harddisks}
-\input{disks}
-\input{disks-fs}
-\input{disks-partition}
-\input{disk-free}
-\input{disk-usage}
+\input{src/disks}
+\input{src/disks-fs}
+\input{src/disks-partition}
+\input{src/disk-free}
+\input{src/disk-usage}
 \section{Netwerk}
-\input{netwerk_hardware}
+\input{src/netwerk_hardware}
 \section{Inventarisatie opdracht}
-\input{inventarisatie_opdracht}
+\input{src/inventarisatie_opdracht}
 
 % Provides: journalctl, ps, dmesg, top, free, last
 % uptime, syslog
 \chapter{Systeembeheer}
-\input{systeembeheer}
+\input{src/systeembeheer}
 \section{CPU gebruik}
-\input{uptime}
+\input{src/uptime}
 \section{Geheugen gebruik}
-\input{geheugengebruik}
-\section{Gebruik door gebruikers}
-\input{usermonitoring}
+\input{src/geheugengebruik}
+\section{Aanwezige gebruikers}
+\input{src/usermonitoring}
 \section{Processen}
 % ps
 % top
@@ -245,16 +245,16 @@
 % Requires: lsblk
 % Provides: mount, umount
 \chapter{Mounten van lokale bestandssystemen}
-\input{Mounten}
+\input{src/Mounten}
 \subsection{Mounten van disks}
-\input{MountenDisks}
+\input{src/MountenDisks}
 
 \chapter{Netwerk configuratie}
 
 \chapter{Software installeren}
 
 \chapter{Programmeertalen}
-\input{Programmeertalen}
+\input{src/Programmeertalen}
 \section{C}
 \section{C++}
 \section{Perl}
@@ -263,29 +263,31 @@
 \section{Bash}
 
 \chapter{Shell scripting}\index{Shell scripting}
-\input{ScriptingIntro}
+\input{src/ScriptingIntro}
 \section{Waarom scripting?}
-\input{ScriptingGebruik}
+\input{src/ScriptingGebruik}
 \section{Hello World - een eerste script}
-\input{ScriptingHelloWorld}
+\input{src/ScriptingHelloWorld}
 \section{Het starten van scripts}\index{Shell scripting!Starten}
-\input{ScriptingOpstarten}
+\input{src/ScriptingOpstarten}
 \section{Commentaar}\index{Shell scripting!commentaar}
-\input{ScriptingCommentaar}
+\input{src/ScriptingCommentaar}
 \section{Variabelen}\index{Variabelen, shell scripting}\index{Shell scripting!Variabelen}
-\input{ScriptingVariabelen}
+\input{src/ScriptingVariabelen}
 \section{if}\index{if}\index{Shell scripting!if}
-\input{ScriptingIf}
+\input{src/ScriptingIf}
 \subsection{Opdracht: Werken met if}
-\input{ScriptingIfOpdracht}
+\input{src/ScriptingIfOpdracht}
 \section{for}\index{for}\index{Shell scripting!for}
-\input{ScriptingFor}
+\input{src/ScriptingFor}
 \subsection{Opdracht: Werken met for}
-\input{ScriptingForOpdracht}
+\input{src/ScriptingForOpdracht}
 \section{while}\index{while}\index{Shell scripting!while}
-\input{ScriptingWhile}
+\input{src/ScriptingWhile}
 \subsection{Opdracht: Werken met While}
-\input{ScriptingWhileOpdracht}
+\input{src/ScriptingWhileOpdracht}
+\section{Opdracht: Gemiddelde cijfer van een student}
+\input{src/ScriptingKlasOpdracht}
 
 %%%%%%%%%%%%%%%%%%%%%
 %%% Index and End %%%
