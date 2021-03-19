@@ -225,7 +225,7 @@
 \input{src/inventarisatie_opdracht}
 
 % Provides: journalctl, ps, dmesg, top, free, last
-% uptime, syslog
+% uptime, syslog, kill
 \chapter{Systeembeheer}
 \input{src/systeembeheer}
 \section{CPU gebruik}
@@ -235,18 +235,21 @@
 \section{Aanwezige gebruikers}
 \input{src/usermonitoring}
 \section{Processen}
-% ps
-% top
+\input{src/processen_ps}
+\input{src/processen_kill}
+\input{src/processen_top}
 \section{Logging}
-% syslog
-% ring buffer dmesg
-% Journal, var, dmesg
+\input{src/logging}
+\subsection{syslog}
+\input{src/syslog}
+\subsection{kernel berichten}
+\input{src/logging_kernel}
 
 % Requires: lsblk
 % Provides: mount, umount
 \chapter{Mounten van lokale bestandssystemen}
 \input{src/Mounten}
-\subsection{Mounten van disks}
+\section{Mounten van disks}
 \input{src/MountenDisks}
 
 \chapter{Netwerk configuratie}
